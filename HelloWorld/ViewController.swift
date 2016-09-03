@@ -21,7 +21,20 @@ class ViewController: UIViewController {
     var memberTeam: String = "S"
 
     @IBAction func registerMemberInfo(sender: AnyObject) {
-        memberInfoLabel.text = "Name: \(nameTextField.text)\nTeam: \(memberTeam)\nUnit: \(unitTextField.text)\nAge: \(ageLabel.text)"
+
+        guard let name = nameTextField.text else {
+            return
+        }
+
+        guard let unit = unitTextField.text else {
+            return
+        }
+
+        guard let age = ageLabel.text else {
+            return
+        }
+
+        memberInfoLabel.text = "Name: \(name)\nTeam: \(memberTeam)\nUnit: \(unit)\nAge: \(age)"
         nameTextField.resignFirstResponder()
         unitTextField.resignFirstResponder()
     }
