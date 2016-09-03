@@ -10,6 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var teamTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var unitTextField: UITextField!
+
+    @IBOutlet weak var memberInfoLabel: UILabel!
+
+    @IBAction func myButtonTap(sender: AnyObject) {
+        memberInfoLabel.text = "Name:\(nameTextField.text)\nTeam:\(teamTextField.text)\nUnit:\(unitTextField.text)"
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -22,4 +32,3 @@ class ViewController: UIViewController {
 
 
 }
-
